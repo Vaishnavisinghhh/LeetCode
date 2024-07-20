@@ -1,0 +1,22 @@
+class Solution:
+    def isWinner(self, player1: List[int], player2: List[int]) -> int:
+        playerOne = 0
+        playerTwo = 0
+
+        for index,pins in enumerate(player1):
+            if index-2>-1 and player1[index-2]==10 or index-1>-1 and player1[index-1]==10:
+                playerOne+=2*pins
+            else:
+                playerOne+=pins
+
+        for index,pins in enumerate(player2):
+            if index-2>-1 and player2[index-2]==10 or index-1>-1 and player2[index-1]==10:
+                playerTwo+=2*pins
+            else:
+                playerTwo+=pins
+        if playerOne>playerTwo:
+            return 1
+        elif playerTwo>playerOne:
+            return 2
+        return 0
+            
