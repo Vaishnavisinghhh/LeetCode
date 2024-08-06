@@ -1,0 +1,3 @@
+Input: coordinates = "a1"
+Output: false
+Explanation: From the chessboard above, the square with coordinates "a1" is black, so return false.
