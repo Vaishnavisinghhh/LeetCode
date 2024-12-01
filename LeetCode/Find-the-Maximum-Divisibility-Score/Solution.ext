@@ -1,0 +1,22 @@
+class Solution:
+    def maxDivScore(self, nums: List[int], divisors: List[int]) -> int:
+        l=[]
+        for i in divisors:
+            count=0
+            for j in nums:
+                if j%i==0:
+                    count+=1
+            l.append(count)
+        s=list(set(l))
+        l1=sorted(l)
+        if s==l1:
+            a=max(l)
+            b=l.index(a)
+            return divisors[b]
+        else:
+            a=max(l)
+            b=max(divisors)
+            for i in range(len(divisors)):
+                if l[i]==a and divisors[i]<b:
+                    b=divisors[i]
+            return b
